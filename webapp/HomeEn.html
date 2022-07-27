@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>無人行動車車-首頁</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<link rel="stylesheet" href="header_side.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<style>
+		.container {
+			/* border: 1px solid black; */
+			height: 90vh;
+			width: 90vw;
+			margin: 20px;
+			border-collapse: separate;
+			border-spacing: 20px;
+		}
+
+		.container_th1 {
+			width: 60%;
+		}
+
+		.container_th2 {
+			width: 40%;
+		}
+
+		.main {
+			margin: 3px;
+			/* border: 1px solid blue; */
+			border-radius: 10px;
+			height: 100%;
+			width: 95%;
+			background-color: white;
+			text-align: center;
+		}
+
+
+		.container_th2 {
+			width: 800px;
+		}
+
+		.td_fieldset legend {
+			text-align: left;
+			margin-left: 10%
+		}
+
+		.td_fieldset td {
+			height: auto;
+		}
+
+		.td_fieldset table {
+			width: 80%;
+			text-align: center;
+			margin: auto;
+		}
+
+		.td_fieldset th {
+			text-align: center;
+			border: 1px solid black;
+		}
+	</style>
+	<style>
+		/* td2 user list CSS setting */
+		.user_list {
+			width: 100%;
+			max-height: 100%;
+			/* border: 1px solid red; */
+		}
+
+		.user_list td {
+			/* border: 1px solid black; */
+			height: auto;
+		}
+
+		.user_list img {
+			border-radius: 100%;
+			border: 1px solid black;
+		}
+	</style>
+	<style>
+		/* map CSS setting */
+		.map_div {
+			background-image: url(dicarimg/map.jpg);
+			width: 500px;
+			height: 388px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			border: 1px solid red;
+			opacity: 0.8;
+			margin: auto;
+			border-radius: 20px;
+		}
+
+		.map_table {
+			width: 100%;
+			height: 100%;
+		}
+
+		.map_table td {
+			width: 64px;
+			height: 57px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="side">
+		<ul class="out">
+
+			<li><span class="sideButton"><img src="icon/menu.png" alt=""> </span>Welcome</li>
+			<li><img src="icon/home.png" alt=""><a href="HomeEn.html">
+					<span>Home</span>
+				</a></li>
+			<li><img src="icon/introduction.png" alt=""><a href="Introduction.jsp"><span>dicar introduction</span></a></li>
+			<li><img src="icon/car.png" alt=""><a href="CarDataEn.html"><span>Car System</span></a></li>
+			<li><img src="icon/storehouse.png" alt=""><a href="StorehouseEn.html"><span>Storehouse System</span></a></li>
+			<li><img src="icon/error.png" alt=""><a href="ErrorListEn.html"><span>Error List</span></a></li>
+			<li><img src="icon/camera.png" alt=""><a href="StreamEn.html"><span>Stream</span></a></li>
+			<li><img src="icon/telephone.jpg" alt=""><a href="Contact.html#first-row"><span>contact us</span></a></li>
+			<li><a href=""><span></span></a></li>
+			<li><a href=""><span></span></a></li>
+			<li>_</li>
+			<li><span class="language"> <img src="icon/language.png" alt=""> <select name="language" id="language">
+						<option value="default">Language</option>
+						<option value="Ch">中文</option>
+						<option value="En">English</option>
+					</select>
+				</span></li>
+			<li><img src="icon/logout.png" alt=""><a href="Login.html"> <span>Logout</span></a></li>
+		</ul>
+
+	</div>
+	<ul class="in" style="display: none;">
+		<li style="background-color: black;"><img style="height: 20px;" src="icon/menu.png" alt=""></li>
+	</ul>
+
+	<div class="div_header">
+		<header>
+			<span class="title"> <img class="img_dicar logo" src="dicarimg/dicar001.png"
+					style="max-height: 95%; border-radius: 25px;" alt="">
+			</span>
+			<ul class="header_ul">
+			</ul>
+		</header>
+	</div>
+	<div class="container-fluid">
+
+		<table class="container ">
+			<tr>
+				<th class="container_th1">
+					<div class="main td1">
+						<fieldset class="td_fieldset">
+							<legend>Location</legend>
+
+							<div class="map_div">
+								<table class="map_table">
+									<tr class="tr_num1">
+										<td class="td_num1"></td>
+										<td class="td_num2"></td>
+										<td class="td_num3"></td>
+										<td class="td_num4"></td>
+										<td class="td_num5"></td>
+										<td class="td_num6 car1p0"></td>
+										<td class="td_num7 car2p0"></td>
+										<td class="td_num8"></td>
+									</tr>
+									<tr class="tr_num2">
+										<td class="td_num1"></td>
+										<td class="td_num2"></td>
+										<td class="td_num3"></td>
+										<td class="td_num4"></td>
+										<td class="td_num5"></td>
+										<td class="td_num6"></td>
+										<td class="td_num7"></td>
+										<td class="td_num8"></td>
+									</tr>
+									<tr class="tr_num3">
+										<td class="td_num1 car1p2"></td>
+										<td class="td_num2"></td>
+										<td class="td_num3"></td>
+										<td class="td_num4"></td>
+										<td class="td_num5"></td>
+										<td class="td_num6"></td>
+										<td class="td_num7"></td>
+										<td class="td_num8"></td>
+									</tr>
+									<tr class="tr_num4">
+										<td class="td_num1 car2p2"></td>
+										<td class="td_num2"></td>
+										<td class="td_num3"></td>
+										<td class="td_num4"></td>
+										<td class="td_num5"></td>
+										<td class="td_num6"></td>
+										<td class="td_num7"></td>
+										<td class="td_num8"></td>
+									</tr>
+									<tr class="tr_num5">
+										<td class="td_num1"></td>
+										<td class="td_num2"></td>
+										<td class="td_num3"></td>
+										<td class="td_num4"></td>
+										<td class="td_num5"></td>
+										<td class="td_num6"></td>
+										<td class="td_num7"></td>
+										<td class="td_num8"></td>
+									</tr>
+									<tr class="tr_num6">
+										<td class="td_num1"></td>
+										<td class="td_num2"></td>
+										<td class="td_num3"></td>
+										<td class="td_num4"></td>
+										<td class="td_num5"></td>
+										<td class="td_num6 car1p1"></td>
+										<td class="td_num7 car2p1"></td>
+										<td class="td_num8 "></td>
+									</tr>
+								</table>
+								<input type="button" name="" id="" class="button_r" value="red">
+								<input type="button" name="" id="" class="button_g" value="green">
+							</div>
+
+						</fieldset>
+					</div>
+				</th>
+				<th class="container_th2">
+					<div class="main td2">
+						<fieldset class="td_fieldset">
+							<legend>Manerger</legend>
+
+							<table class="user_list">
+								<thead>
+									<tr>
+										<th colspan="2" style="width: 40%;">ID</th>
+
+										<th>Last Login Time</th>
+									</tr>
+								</thead>
+								<tbody>
+
+								</tbody>
+							</table>
+						</fieldset>
+					</div>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<div class="main td3">
+						<fieldset class="td_fieldset">
+							<legend>StoreHouse</legend>
+							<table>
+								<thead>
+									<tr>
+										<th style="width: 10%;"></th>
+										<th style="width: 25%;">Location</th>
+										<th style="width: 16%;">Red</th>
+										<th style="width: 16%;">Green</th>
+										<th style="width: 16%;">Blue</th>
+										<th style="width: 16%;">Yellow</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>綠車</td>
+										<td>1號位置</td>
+										<td>2</td>
+										<td>1</td>
+										<td>3</td>
+										<td>2</td>
+									</tr>
+								</tbody>
+							</table>
+						</fieldset>
+
+					</div>
+				</td>
+				<td>
+					<div class="main td4">
+						<fieldset class="td_fieldset">
+							<legend>ErrorList</legend>
+							<table>
+								<thead>
+									<tr>
+										<th style="width: 25%;">Error</th>
+										<th style="width: 45%;">Time</th>
+										<th style="width: 25%;">Status</th>
+									</tr>
+								</thead>
+								<tbody>
+
+								</tbody>
+							</table>
+						</fieldset>
+					</div>
+				</td>
+			</tr>
+
+
+		</table>
+	</div>
+	<!--  
+    <%HtmlLib htmlLib=new HtmlLib();%>
+    <%=htmlLib.user_arr_produce() %>
+    -->
+	<script>
+		//產生user information
+		let user_information = [];
+		user_information = ['<img src="head/head01.png" alt="">', '有貝爾來']
+		/*
+		*/
+		//------------------------
+		// 產生TD2的使用者列表
+		// 0>imageURL 1>name/account  2>login time
+		let user_arr = [];
+		user_arr[0] = ["<img src='head/head01.png' height=40px>", "有貝爾來", "2022-07-25 10:26:36"];
+		user_arr[1] = ["<img src='head/head02.jpg' height=40px>", "Bear", "2022-07-25 10:26:36"];
+		user_arr[2] = ["<img src='head/head03.jpg' height=40px>", "Jay", "2022-07-25 10:26:36"];
+		user_arr[3] = ["<img src='head/head04.png' height=40px>", "HowLE", "2022-07-25 10:26:36"];
+		user_arr[4] = ["<img src='head/head05.jpg' height=40px>", "Jimmy", "2022-07-25 10:26:36"];
+		let total = 5
+		//-----------------
+		// 產生TD3的車車資訊列表
+		let car_arr = [];
+		// for (let i = 0; i < 2; i++) {
+		// 	car_arr[i] = ["綠車", "一號位置", "2", "1", "3", "2"];
+		// }
+		car_arr[0] = ["綠車", "一號位置", "2", "1", "3", "2"];
+		car_arr[1] = ["紅車", "二號位置", "2", "4", "1", "1"];
+		let car_arr_length = 2
+		//-------------------------
+		// 產生TD4的錯誤資訊列表
+		let error_arr = [];
+		for (let i = 0; i < 2; i++) {
+			error_arr[i] = ["倉庫缺貨", "2022-07-12-09-30", "已排除"];
+		}
+		let error_arr_length = 2
+		//-----------------------
+		//產生車車位置資訊
+		let car1_position = 1;
+		let car2_position = 2;
+		//------------------
+	</script>
+
+	<script>
+		//產生user information
+		function header_ul_append() {
+			$(".header_ul").empty().append(
+				"<li>" + user_information[0] + "</li><li>"
+				+ user_information[1] + "</li>")
+		}
+		header_ul_append();
+	</script>
+
+	<script>
+		// 產生TD2的使用者列表
+		//user_arr  and total set at htmlLib.user_arr_produce()
+		function user_arr_append() {
+			$(".td2 tbody").empty()
+			for (let i = 0; i < total; i++) {
+				$(".td2 tbody").append(
+					"<tr><td>" + user_arr[i][0] + "</td><td>" + user_arr[i][1]
+					+ "</td><td>" + user_arr[i][2] + "</td></tr>");
+			}
+		}
+		user_arr_append();
+	</script>
+	<script>
+		// 產生TD3的車車資訊列表
+		//car_arr  and car_arr_length set at htmlLib.car_arr_produce()
+		function car_arr_append() {
+			$(".td3 tbody").empty();
+			for (let i = 0; i < car_arr_length; i++) {
+				$(".td3 tbody").append(
+					"<tr><td>" + car_arr[i][0] + "</td><td>" + car_arr[i][1]
+					+ "</td><td>" + car_arr[i][2] + "</td><td>"
+					+ car_arr[i][3] + "</td><td>" + car_arr[i][4]
+					+ "</td><td>" + car_arr[i][5] + "</td></tr>");
+			}
+		}
+		car_arr_append();
+	</script>
+	<script>
+		//error_arr  and error_arr_length set at htmlLib.error_arr_produce()
+		//產生TD4的錯誤資訊列表
+		function error_arr_append() {
+			$(".td4 tbody").empty();
+			for (let i = 0; i < error_arr_length; i++) {
+				$(".td4 tbody").append(
+					"<tr><td>" + error_arr[i][0] + "</td><td>"
+					+ error_arr[i][1] + "</td><td>" + error_arr[i][2]
+					+ "</td></tr>");
+			}
+		}
+		error_arr_append();
+	</script>
+	<script>
+		//產生車車位置資訊
+		let c1p = ".car1p" + car1_position;
+		let c2p = ".car2p" + car2_position;
+		$(c1p)
+			.append(
+				'<img src="dicarimg/dicar_logo_green.png" style="max-width: 90%;" alt="">')
+		$(c2p)
+			.append(
+				'<img src="dicarimg/dicar_logo.png" style="max-width: 90%;" alt="">')
+		$(".button_g").click(function () {
+			car1_position += 1;
+			car1_position %= 3;
+			showimg();
+		})
+		$(".button_r").click(function () {
+			car2_position += 1;
+			car2_position %= 3;
+			showimg();
+		})
+		function showimg() {
+			c1p = ".car1p" + car1_position;
+			c2p = ".car2p" + car2_position;
+			$(".map_div td").empty();
+			$(c1p)
+				.append(
+					'<img src="dicarimg/dicar_logo_green.png" style="max-width: 90%;" alt="">')
+			$(c2p)
+				.append(
+					'<img src="dicarimg/dicar_logo.png" style="max-width: 90%;" alt="">')
+		}
+
+	</script>
+
+
+
+	<script>
+		$(".sideButton").click(function () {
+			$(".side").css("width", "22px")
+			$(".side .out").css("display", "none")
+			$(".in").css("display", "block")
+		})
+		$(".in li").click(function () {
+			$(".side").css("width", "200px")
+			$(".side .out").css("display", "block")
+			$(".in").css("display", "none")
+		})
+	</script>
+	<script>
+		$(".title").css("left", "20%")
+	</script>
+
+
+	<script>
+		var i_dicar = 1;
+		var i_str = "01";
+		var dicar_change_img_y = function dicar1to22() {
+			setTimeout(function () {
+				let dicar_src = "dicarimg/dicar0" + i_str + ".png"
+				$(".img_dicar").attr("src", dicar_src)
+				i_dicar = i_dicar + 1
+				if (i_dicar < 23) {
+					i_str = i_dicar;
+					if (i_dicar < 10) {
+						i_str = "0" + i_dicar;
+					}
+					dicar_change_img_y();
+				}
+			}, 300)
+		}
+
+		$(".img_dicar").click(dicar_change_img_y)
+	</script>
+
+<script>
+	$("#language").change(function(){
+		if($(this).val()=="En")
+		window.location.href='HomeEn.html';
+		if($(this).val()=="Ch")
+		window.location.href='Home.html';
+	})
+</script>
+
+
+
+</body>
+
+</html>

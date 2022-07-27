@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    background-color: whitesmoke;
+}
+
+.title {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 60px;
+    line-height: 60px;
+    transition: 2s;
+    width: 500px;
+    position: relative;
+    left: -30%;
+}
+
+.language img {
+    height: 30px;
+    position: relative;
+    top: 1px;
+}
+
+.side {
+    background-color: rgb(38, 38, 38);
+    width: 15vw;
+    float: left;
+    height: 200vh;
+    /* position: absolute ; */
+    left: 0px;
+    /* opacity:0.5 */
+    transition: 0.5s;
+}
+
+.side ul {
+    color: rgb(249, 249, 249);
+    margin: 0;
+    padding: 0;
+    position: fixed;
+}
+
+.side a {
+    color: rgb(249, 249, 249);
+}
+
+.side li {
+    list-style-type: none;
+    margin: 20px;
+}
+
+.out li img {
+    height: 16px;
+    margin-bottom: 4px;
+}
+
+header {
+    /* text-align: center; */
+    background-color: white;
+    height: 10vh;
+    line-height: 60px;
+}
+
+.header_ul {
+    display: flex;
+    float: right;
+}
+
+.header_ul img {
+    height: 40px;
+    border-radius: 10px;
+}
+
+.header_ul li {
+    list-style-type: none;
+    margin-right: 10px;
+}
+
+.in {
+    position: absolute;
+    margin: 2px;
+    padding: 0%;
+}
+
+.in li {
+    list-style-type: none;
+}
+
+.out span {
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.out .wcar {
+    background-color: black;
+}
+.div_header{
+    overflow: hidden;
+}

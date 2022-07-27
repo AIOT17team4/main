@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dicar-即時監控系統</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+    <link rel="stylesheet" href="header_side.css">
+    <style>
+        legend{
+            margin-left: 30px;
+        }
+       
+    </style>
+</head>
+
+<body>
+    
+    <!-- ---------------------------------------------------------- -->
+    <h1>即時監控系統</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <fieldset style="background-color: white; margin: 5pt; padding: 5pt; border-radius: 2pt;">
+                    <!-- <p style="margin-bottom: 0;text-align: center;" class="h3">全景監控</p> -->
+                    <legend>全景監控 </legend>
+                    <div>
+                        <img id="full" src="" alt="" width="500px" height="350px" style="display:block; margin:auto;">
+
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col" style="height: 300px;">
+                <fieldset style="background-color: white;margin: 5pt;padding: 5pt;border-radius: 2pt;">
+                    <!-- <p style="margin-bottom: 0;text-align: center;" class="h3">倉庫監控</p> -->
+                    <legend>倉庫監控 </legend>
+                    <div>
+                        <img id="storehouse" src="" alt="" width="500px" height="350px"
+                            style="display:block; margin:auto;">
+
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <fieldset style="background-color: white;margin: 5pt;padding: 5pt;border-radius: 2pt;">
+                    <!-- <p style="margin-bottom: 0;text-align: center;" class="h3">A點監控</p> -->
+                    <legend>A點監控 </legend>
+                    <div>
+                        <img id="first" src="" alt="" width="500px" height="350px" style="display:block; margin:auto;">
+
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col">
+                <fieldset style="background-color: white;margin: 5pt;padding: 5pt;border-radius: 2pt;">
+                    <!-- <p style="margin-bottom: 0;text-align: center;" class="h3">B點監控</p> -->
+                    <legend>B點監控 </legend>
+                    <div>
+                        <img id="second" src="" alt="" width="500px" height="350px" style="display:block; margin:auto;">
+
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ---------------------------------------------------------- -->
+    <script>
+        // //設定圖片路徑與屬性
+        // $('#full').attr("src", "http://192.168.24.22:8080/video")
+        // $('#second').attr("src", "http://192.168.24.165:8080/video")
+        // $('#first').attr("src", "http://192.168.24.25:8080/video")
+        // $('#storehouse').attr("src", "http://192.168.24.155:8080/video")
+
+        $('#full').attr("src", "cam/cam1.png")
+        $('#storehouse').attr("src", "cam/cam2.png")
+        $('#first').attr("src", "cam/cam3.png")
+        $('#second').attr("src", "cam/cam4.png")
+
+    </script>
+    <script>
+        $(".sideButton").click(function () {
+            $(".side").css("width", "22px")
+            $(".side .out").css("display", "none")
+            $(".in").css("display", "block")
+        })
+        $(".in li").click(function () {
+            $(".side").css("width", "200px")
+            $(".side .out").css("display", "block")
+            $(".in").css("display", "none")
+        })
+    </script>
+    <script>
+        $(".title").css("left", "20%")
+    </script>
+
+
+    <script>
+
+        var i_dicar = 1;
+        var i_str = "01";
+        var dicar_change_img_y = function dicar1to22() {
+            setTimeout(function () {
+                let dicar_src = "dicarimg/dicar0" + i_str + ".png"
+                $(".img_dicar").attr("src", dicar_src)
+                i_dicar = i_dicar + 1
+                if (i_dicar < 23) {
+                    i_str = i_dicar;
+                    if (i_dicar < 10) {
+                        i_str = "0" + i_dicar;
+                    }
+                    dicar_change_img_y();
+                }
+            }, 300)
+        }
+
+        $(".img_dicar").click(dicar_change_img_y)
+    </script>
+
+<script src="header_side.js"></script>
+    <script src="common1.js"></script>
+    <script>
+        $("#language").change(function(){
+            if($(this).val()=="En")
+            window.location.href='StreamEn.html';
+            if($(this).val()=="Ch")
+            window.location.href='Stream.html';
+        })
+    </script>
+
+</body>
+
+</html>

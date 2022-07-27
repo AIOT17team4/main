@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>無人行動車車-首頁</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background-color: whitesmoke;
+        }
+
+
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 60px;
+            line-height: 60px;
+            transition: 2s;
+            width: 500px;
+            position: relative;
+            left: -30%;
+        }
+
+
+
+        .language img {
+            height: 30px;
+            position: relative;
+            top: 1px;
+        }
+
+        .side {
+            background-color: rgb(38, 38, 38);
+            width: 15vw;
+            float: left;
+            height: 200vh;
+            /* position: absolute ; */
+            left: 0px;
+            /* opacity:0.5 */
+            transition: 0.5s;
+
+        }
+
+        .side ul {
+            color: rgb(249, 249, 249);
+            margin: 0;
+            padding: 0;
+            position: fixed;
+        }
+
+        .side a {
+            color: rgb(249, 249, 249);
+        }
+
+        .side li {
+            list-style-type: none;
+            margin: 20px;
+        }
+
+        .out li img {
+            height: 16px;
+            margin-bottom: 4px;
+        }
+
+        header {
+            /* text-align: center; */
+            background-color: white;
+            height: 10vh;
+            line-height: 60px;
+
+        }
+
+        .header_ul {
+            display: flex;
+            float: right;
+        }
+
+        .header_ul img {
+            height: 40px;
+            border-radius: 10px;
+        }
+
+        .header_ul li {
+            list-style-type: none;
+            margin-right: 10px;
+        }
+
+        .container {
+            /* border: 1px solid black; */
+            height: 90vh;
+            width: 80vw;
+            margin: 20px;
+            border-collapse: separate;
+            border-spacing: 20px;
+        }
+
+        .container_th1 {
+            width: 60%;
+        }
+
+        .container_th2 {
+            width: 35%;
+        }
+
+        .main {
+            margin: 3px;
+            /* border: 1px solid blue; */
+            border-radius: 10px;
+            height: 100%;
+            width: 95%;
+            background-color: white;
+            text-align: center;
+
+        }
+
+        .container td {
+            width: 550px;
+            height: 360px
+        }
+
+
+        .in {
+            position: absolute;
+            margin: 2px;
+            padding: 0%;
+        }
+
+        .in li {
+            list-style-type: none;
+
+        }
+
+        .out span {
+
+            border-radius: 3px;
+            padding: 2px;
+        }
+
+        .out .wcar {
+            background-color: black;
+        }
+
+        .td_fieldset legend {
+            text-align: left;
+            margin-left: 10%
+        }
+
+        .td_fieldset td {
+            height: auto;
+        }
+
+        .td_fieldset table {
+            width: 80%;
+            text-align: center;
+            margin: auto;
+        }
+
+        .td_fieldset th {
+            text-align: center;
+            border: 1px solid black;
+        }
+    </style>
+    <style>
+        /* td2 user list CSS setting */
+        .user_list {
+            width: 100%;
+            max-height: 100%;
+            /* border: 1px solid red; */
+        }
+
+        .user_list td {
+            /* border: 1px solid black; */
+            height: auto;
+
+        }
+
+        .user_list img {
+            border-radius: 100%;
+            border: 1px solid black;
+        }
+    </style>
+    <style>
+        /* map CSS setting */
+        .map_div {
+            background-image: url(dicarimg/map.jpg);
+            width: 500px;
+            height: 388px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            border: 1px solid red;
+            opacity: 0.8;
+            margin: auto;
+            border-radius: 20px;
+        }
+
+        .map_table {
+            width: 100%;
+            height: 100%;
+        }
+
+        .map_table td {
+            width: 64px;
+            height: 57px;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <!-- ---------------------------------------------------------- -->
+    <h1>倉儲系統</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col" style="height: 300px; overflow-y:auto">
+                <fieldset style="background-color: white; margin: 5pt; padding: 5pt; border-radius: 2pt;">
+                    <p style="margin-bottom: 0;" class="h3">庫存資訊</p>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">流水號</th>
+                                <th scope="col">更新時間</th>
+                                <th scope="col">紅積木</th>
+                                <th scope="col">綠積木</th>
+                                <th scope="col">藍積木</th>
+                                <th scope="col">黃積木</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>15:00:00</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>10:00:00</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>13:00:00</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </div>
+            <div class="col" style="height: 300px; overflow-y:auto">
+                <fieldset style="background-color: white;margin: 5pt;padding: 5pt;border-radius: 2pt;">
+                    <p style="margin-bottom: 0;" class="h3">進出紀錄</p>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">時間</th>
+                                <th scope="col">狀態</th>
+                                <th scope="col">紅積木</th>
+                                <th scope="col">綠積木</th>
+                                <th scope="col">藍積木</th>
+                                <th scope="col">黃積木</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">10:00:00</th>
+                                <td>進貨</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12:00:00</th>
+                                <td>出貨</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">15:00:00</th>
+                                <td>出貨</td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <fieldset style="background-color: white;margin: 5pt;padding: 5pt;border-radius: 2pt;">
+                    <div id="line" style="width: 600px;height:400px;"></div>
+                </fieldset>
+            </div>
+            <div class="col">
+                <fieldset style="background-color: white;margin: 5pt;padding: 5pt;border-radius: 2pt;">
+                    <div id="pie" style="width: 600px;height:400px;"></div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('line'));
+        var option = {
+            title: {
+                text: '日存量'
+            },
+            tooltip: {},
+            legend: {
+                data: ['销量']
+            },
+            xAxis: {
+                data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {},
+            series: [
+                {
+                    name: '紅',
+                    type: 'line',
+                    color: '#FF0000',
+                    data: [5, 3, 5, 2, 1, 4, 2]
+                },
+                {
+                    name: '綠',
+                    type: 'line',
+                    color: '#00BB00',
+                    data: [1, 4, 5, 3, 2, 2, 1]
+                },
+                {
+                    name: '藍',
+                    type: 'line',
+                    color: '#0000E3',
+                    data: [2, 3, 2, 4, 10, 1, 3]
+                },
+                {
+                    name: '黃色',
+                    type: 'line',
+                    color: '#FFD306',
+                    data: [2, 10, 5, 1, 2, 5, 2]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+     <script type="text/javascript">
+        var myChart = echarts.init(document.getElementById('pie'));
+        var option = {
+            title: {
+                text: '周出貨總量'
+            },
+            tooltip: {},
+            legend: {
+                data: ['销量']
+            },
+            
+            series: [
+                {
+                    type: 'pie',
+                        data: [
+                            {
+                            value: 20,
+                            name: '藍',
+                            },
+                            {
+                            value: 15,
+                            name: '綠',
+                            },
+                            {
+                            value: 24,
+                            name: '黃',
+                            },
+                            {
+                            value: 18,
+                            name: '紅',
+                            }
+                        ]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+
+
+    
+
+<script src="header_side.js"></script>
+<script src="common1.js"></script>
+
+<script>
+    $("#language").change(function(){
+        if($(this).val()=="En")
+        window.location.href='StorehouseEn.html';
+        if($(this).val()=="Ch")
+        window.location.href='Storehouse.html';
+    })
+</script>
+
+</body>
+
+</html>

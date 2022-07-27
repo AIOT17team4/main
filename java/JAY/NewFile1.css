@@ -1,0 +1,66 @@
+header{
+
+	height: 50px;
+    text-align: center;
+    margin-top: 15px;
+}
+.header01{
+color:black;
+font-weight:700;
+font-size: 45px;
+margin-left: 10;
+line-height: 50px;
+text-align: center;
+animation-duration:5s;
+animation-name:header01;
+animation-interation-count: infinite;
+animation-direction:alternate;
+animation-timing-function:ease-in-out;
+}
+@keyframes header01{
+	from{
+		opacity:0.1;
+	}
+	50%{
+		opacity: 1;
+	}
+	to{
+		opacity:0.1;
+	}
+}
+.header02{
+color:black;
+font-weight:700;
+font-size: 45px;
+margin-left: 10;
+line-height: 50px;
+text-align: center;	
+}
+.sb1{
+    width:300px;
+    margin:5% auto;
+    border: 0px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 800px;
+    font-size: 20px;
+}
+.sb1 input{
+    margin: 5px;
+}
+.sb2{
+    width:70%;
+    margin:5% auto;
+    padding:20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 200px;
+   
+}
+
+
+.sb2 input{
+    margin: 5px;
+}
+

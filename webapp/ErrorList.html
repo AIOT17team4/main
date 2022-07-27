@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>無人行動車車-首頁</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="header_side.css">
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+    <style>
+        fieldset {
+            margin-top: 15px;
+            border-radius: 10px;
+            /* border: 1px black solid; */
+            padding-left: 30px;
+            padding-bottom: 15px;
+            padding-right: 15px;
+            background-color: white;
+        }
+
+        legend {
+            margin-left: 20px;
+            width: inherit;
+            /* Or auto */
+            padding: 0 10px;
+            /* To give a bit of padding on the left and right */
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <fieldset>
+                    <legend>異常紀錄</legend>
+                    <table class="table table-striped error_table">
+                        <thead>
+                            <tr>
+                                <th>名稱</th>
+                                <th>時間</th>
+                                <th>狀態</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let error_arr = [];
+        error_arr[0] = ['一號倉庫缺貨', '2022-07-25 10:26:36', '待處理']
+        error_arr[1] = ['車子卡在路上', '2022-07-25 10:26:36', '已排除']
+
+        for (let i = 0; i < 2; i++) {
+            $(".error_table tbody").append("<tr><td>" + error_arr[i][0] + "</td><td>" + error_arr[i][1] + "</td><td>" + error_arr[i][2] + "</td></tr>")
+        }
+    </script>
+
+
+
+
+    <script src="header_side.js"></script>
+    <script src="common1.js"></script>
+    <script>
+        $("#language").change(function(){
+            if($(this).val()=="En")
+            window.location.href='ErrorListEn.html';
+            if($(this).val()=="Ch")
+            window.location.href='ErrorList.html';
+        })
+    </script>
+</body>
+
+</html>
